@@ -2,7 +2,7 @@
 # coding: utf-8
 # user_pass_connect.py
 """
-set dbabase connection secret parameters, user name and password authentication
+set database connection secret parameters, user name and password authentication
 """
 # 345678901234567890123456789012345678901234567890123456789012345678901234567890
 __author__ = "Dr Adel"
