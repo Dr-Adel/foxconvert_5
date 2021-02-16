@@ -10,19 +10,20 @@ __location__ = "Roushdy"
 __date__ = "Feb 12, 2018 06:58 PM"
 
 import sys
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets as qtw
 import os.path
 import json
 import psycopg2
 import ui_user_password_dlg
 import ui_set_conn_dlg
 import set_conn_1
+
 # -------------------
 RES_FILE = 'pg_connection.bin'
 SIGNATURE = 'pg_sgnature_ver1'
 
 
-class UserPasswordDlg(QtWidgets.QDialog):
+class UserPasswordDlg(qtw.QDialog):
     """ user name - password Dialog
 
     """
@@ -42,7 +43,7 @@ class UserPasswordDlg(QtWidgets.QDialog):
         pass
 
 
-class PgConnectionArgs(QtWidgets.QDialog):
+class PgConnectionArgs(qtw.QDialog):
     """ maintain database connection arguments
     Used by Admin to reset parameters and save encrypted file
     Structure (encrypted in set_con_1.py): version 'pg_sgnature_ver1' file nmae: 'pg_connection.bin'
@@ -330,7 +331,7 @@ class PgReadConnectBuld:
 
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
+    app = qtw.QApplication(sys.argv)
     # myfont = QFont("AlMateen")
     # myfont = QFont("Noto Naskh Arabic UI", 10, QFont.Bold)
     # myfont = QFont("Sans")
