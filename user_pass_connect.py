@@ -11,6 +11,8 @@ __date__ = "Feb 12, 2018 06:58 PM"
 
 import sys
 from PyQt5 import QtWidgets as qtw
+from PyQt5 import QtCore as qtc
+from PyQt5 import QtGui as qtg
 import os.path
 import json
 import psycopg2
@@ -107,8 +109,10 @@ class PgConnectionArgs(qtw.QDialog):
     def on_btn_passw_show(self):
         if self.setcon.linePassword.echoMode() == 2:        # Password
             self.setcon.linePassword.setEchoMode(0)         # Normal
+            self.setcon.btnPasswordShow.setIcon(qtg.QIcon('./resources/images/hide_password_icon.png'))
         else:
             self.setcon.linePassword.setEchoMode(2)         # Password
+            self.setcon.btnPasswordShow.setIcon(qtg.QIcon('./resources/images/show_password_icon.png'))
 
     def save(self):
         self.build_dic_from_vars()
@@ -304,7 +308,7 @@ class PgReadConnectBuld:
             self.data = dec
             return 'ok'
 
-    def gettblsindatabase(self):
+    def get_tables_in_database(self):
         """
 
         :return: list of table names
@@ -318,10 +322,10 @@ class PgReadConnectBuld:
         else:
             return None
 
-    def buildtable(self, sql, pgtblnme):
+    def build_table(self, sql, pg_tbl_nme):
         err = 'ok'
         try:
-            print("Creating table ", pgtblnme)
+            print("Creating table ", pg_tbl_nme)
             self.curs.execute(sql)
         except psycopg2.Error as e:
             err = "DB Error: ", e.pgerror

@@ -119,9 +119,9 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>60</y>
+     <y>50</y>
      <width>51</width>
-     <height>31</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -134,8 +134,8 @@
   <widget class="QPushButton" name="btnPasswordShow">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>140</y>
+     <x>260</x>
+     <y>130</y>
      <width>31</width>
      <height>27</height>
     </rect>
@@ -145,7 +145,13 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../../../home/mint183/Documents/icons/ic_remove_red_eye_black_24dp/ios/ic_remove_red_eye.imageset/ic_remove_red_eye.png</normaloff>../../../../../../../home/mint183/Documents/icons/ic_remove_red_eye_black_24dp/ios/ic_remove_red_eye.imageset/ic_remove_red_eye.png</iconset>
+     <normaloff>resources/images/show_password_icon.png</normaloff>resources/images/show_password_icon.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>35</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="btnClose">
