@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './set_conn_dlg.ui'
+# Form implementation generated from reading ui file 'ui_set_conn_dlg.ui'
 #
-# Created by: PyQt5 UI code generator 5.5.1
+# Created by: PyQt5 UI code generator 5.14.2
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -23,6 +25,7 @@ class Ui_Dialog(object):
         self.layoutWidget.setGeometry(QtCore.QRect(21, 41, 223, 138))
         self.layoutWidget.setObjectName("layoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.layoutWidget)
+        self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.formLayout.setObjectName("formLayout")
         self.lblHost = QtWidgets.QLabel(self.layoutWidget)
         self.lblHost.setObjectName("lblHost")
@@ -58,12 +61,12 @@ class Ui_Dialog(object):
         self.lblConnectedIcon = QtWidgets.QLabel(Dialog)
         self.lblConnectedIcon.setGeometry(QtCore.QRect(260, 60, 54, 41))
         self.lblConnectedIcon.setText("")
-        self.lblConnectedIcon.setPixmap(QtGui.QPixmap("../../../../../../../home/mint183/Documents/icons/ic_sync_black_24dp/ios/ic_sync.imageset/ic_sync_2x.png"))
+        self.lblConnectedIcon.setPixmap(QtGui.QPixmap("resources/images/connected_icon_40x40.png"))
         self.lblConnectedIcon.setObjectName("lblConnectedIcon")
         self.lblNotConnectedIcon = QtWidgets.QLabel(Dialog)
         self.lblNotConnectedIcon.setGeometry(QtCore.QRect(260, 60, 51, 31))
         self.lblNotConnectedIcon.setText("")
-        self.lblNotConnectedIcon.setPixmap(QtGui.QPixmap("../../../../../../../home/mint183/Documents/icons/ic_sync_disabled_black_24dp/ios/ic_sync_disabled.imageset/ic_sync_disabled_2x.png"))
+        self.lblNotConnectedIcon.setPixmap(QtGui.QPixmap("resources/images/disconnected_icon_40x40.png"))
         self.lblNotConnectedIcon.setObjectName("lblNotConnectedIcon")
         self.btnPasswordShow = QtWidgets.QPushButton(Dialog)
         self.btnPasswordShow.setGeometry(QtCore.QRect(250, 140, 31, 27))
@@ -91,4 +94,3 @@ class Ui_Dialog(object):
         self.lblPassword.setText(_translate("Dialog", "Password"))
         self.btnClose.setText(_translate("Dialog", "Close"))
         self.btnConnect.setText(_translate("Dialog", "Connect && Save"))
-
