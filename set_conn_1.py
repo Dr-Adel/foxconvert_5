@@ -20,54 +20,55 @@ to convert back after decryption: use eval(str)
 repr(dictionary) -> enc -> save as binary -> read from binary -> dec -> eval(dec)
 """
 
+
 def cipher():
-    '''https://pypi.python.org/pypi/pycrypto key, mode, IV'''
+    """https://pypi.python.org/pypi/pycrypto key, mode, IV"""
     # return AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')
     return AES.new(b'AlWardGameel1234', AES.MODE_CBC, b'GameelAlward7890')
 
 
 def enc(pw):
-    '''encrypt a plain text string'''
+    """encrypt a plain text string"""
     # plaintext must be multiple of 16 bytes
     width = 16 * math.ceil(len(pw) / 16)
     pw = pw.ljust(width)
     obj = cipher()
-    return obj.encrypt(bytes(pw,'utf-8'))
+    return obj.encrypt(bytes(pw, 'utf-8'))
 
 
-def dec(hash):
-    '''decrypt to bytes, must use same key and IV'''
+def dec(hash_):
+    """decrypt to bytes, must use same key and IV"""
     obj = cipher()
     # convert to string and strip extra spaces
-    return obj.decrypt(hash).decode('utf8').strip()
+    return obj.decrypt(hash_).decode('utf8').strip()
 
 
-def encode_values(dict):
-    '''encoding all values of any dictionary using dictionary comprehension'''
+def encode_values(dict_):
+    """encoding all values of any dictionary using dictionary comprehension"""
     # returns a dictionary where all values are encrypted
-    return {x: enc(dict[x]) for x in dict.keys()}
+    return {x: enc(dict_[x]) for x in dict_.keys()}
 
 
-def decode_values(dict):
-    '''decoding all values of any dictionary using dictionary comprehension'''
+def decode_values(dict_):
+    """decoding all values of any dictionary using dictionary comprehension"""
     # returns a decrypted dictionary
-    return {x: dec(dict[x]) for x in dict.keys()}
+    return {x: dec(dict_[x]) for x in dict_.keys()}
 
-def encodeAll(dict):
-    '''encoding all sets of any dictionary using dictionary comprehension'''
+
+def encode_all(dict_):
+    """encoding all sets of any dictionary using dictionary comprehension"""
     # returns a dictionary where all values are encrypted
-    return {enc(x): enc(dict[x]) for x in dict.keys()}
+    return {enc(x): enc(dict_[x]) for x in dict_.keys()}
 
 
-def decodeAll(dict):
-    '''decoding all sets of any dictionary using dictionary comprehension'''
+def decode_all(dict_):
+    """decoding all sets of any dictionary using dictionary comprehension"""
     # returns a decrypted dictionary
-    return {dec(x): dec(dict[x]) for x in dict.keys()}
+    return {dec(x): dec(dict_[x]) for x in dict_.keys()}
 
 
 if __name__ == '__main__':
-    e = encodeAll(dbconnection)
+    e = encode_all(dbconnection)
     print(e)
-    f = decodeAll(e)
+    f = decode_all(e)
     print(f)
-

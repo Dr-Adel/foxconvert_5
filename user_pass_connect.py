@@ -181,7 +181,7 @@ class PgConnectionArgs(qtw.QDialog):
         if not data:
             return 'file empty'
         try:
-            dec = set_conn_1.decodeAll(data)
+            dec = set_conn_1.decode_all(data)
         except:
             return 'error in decoding'
         if 'sign' not in dec:
