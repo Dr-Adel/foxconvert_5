@@ -93,6 +93,7 @@ class PgConnectionArgs(qtw.QDialog):
         self.pg = PgConnect(self.ip, self.db, self.user, self.passw)
         self.curs = self.pg.connect_to_db()
         if self.curs:
+            print('successfully connected')
             self.is_connected = True
             self.setcon.lblNotConnectedIcon.hide()
             self.setcon.lblConnectedIcon.show()

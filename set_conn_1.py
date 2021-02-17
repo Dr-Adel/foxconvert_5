@@ -2,9 +2,10 @@ __author__ = 'Dr Adel'
 __creation__ = '22/06/2016'
 __location__ = 'Roushdy'
 __update_1__ = '13/2/2018'
-__last_update__ = '14/3/2020'
+__update_2__ = '14/3/2020'
+__last_update__ = '17/02/2021'
 
-# package name: pycrypto
+# package name: pycryptodome
 
 from Crypto.Cipher import AES
 import math
